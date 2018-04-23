@@ -4,7 +4,8 @@
   "description": "myg",
   "main": "index.js",
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "require": "^2.4.20"
   },
   "devDependencies": {},
   "scripts": {
