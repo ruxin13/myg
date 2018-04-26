@@ -1,0 +1,7 @@
+{
+  "1": {"id": 1, "type": 1, "name": "tld", "atk": 10, "def": 0},
+  "2": {"id": 2, "type": 1, "name": "ytj", "atk": 9, "def": 0},
+  "3": {"id": 3, "type": 1, "name": "ys", "atk": 8, "def": 0},
+  "4": {"id": 4, "type": 1, "name": "yy", "atk": 5, "def": 0},
+  "5": {"id": 5, "type": 1, "name": "cjzz", "atk": 3, "def": 0}
+}

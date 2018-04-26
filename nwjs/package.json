@@ -1,0 +1,23 @@
+{
+  "main": "myg/index.html",
+  "name": "f",
+  "description": "fff",
+  "version": "0.1.0",
+  "keywords": [
+    "node-webkit"
+  ],
+  "window": {
+    "title": "myg",
+    "toolbar": true,
+    "frame": true,
+    "width": 600,
+    "height": 400,
+    "position": "center",
+    "resizable": true,
+    "show": true
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "chromium-args": "-allow-file-access-from-files"
+}

@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: 13px;
+  font-family: "Microsoft YaHei UI Light", serif;
+  color: #666;
+}
+ul, li{
+  list-style: none;
+  padding: 5px 0;
+}
+.wrap{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.p{
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.pl, .pr{
+  position: relative;
+  width: 200px;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.p1{
+  background-color: #ff9489
+}
+.p2{
+  background-color: #82e599
+}
+.hpbg{
+  width: 50px;
+  height: 4px;
+  border: solid 1px #ccc;
+  background-color: #fff;
+  margin: 5px 0;
+}
+.hp{
+  height: 4px;
+  width: 100%;
+  background-color: #ff484b;
+  transition: width .5s ease;
+}
+.hurt{
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 50%);
+  color: red;
+  animation: hurt .8s ease forwards;
+}
+@keyframes hurt {
+  to{
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+.start{
+  display: block;
+  background-color: #8ab7ff;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 0;
+  margin: 20px auto;
+}
+.w{
+  box-sizing: border-box;
+  padding: 10px;
+  min-height: 5em;
+  min-width: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: #f3f3f3;
+}

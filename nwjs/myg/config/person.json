@@ -1,0 +1,13 @@
+{
+  "id": "p",
+  "name": "Aston",
+  "fhp": 20,
+  "hp": 20,
+  "atk": 18,
+  "def": 8,
+  "exp": 0,
+  "level": 1,
+  "ck": 1,
+  "money": 0,
+  "p_B": []
+}

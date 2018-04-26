@@ -1,0 +1,101 @@
+{
+  "m1": {
+    "id": "m1",
+    "name": "Jorge",
+    "fhp": 20,
+    "hp": 20,
+    "atk": 7,
+    "def": 5,
+    "exp": 12,
+    "money": 5,
+    "equip": [1]
+  },
+  "m2": {
+    "id": "m2",
+    "name": "Merie2",
+    "fhp": 50,
+    "hp": 50,
+    "atk": 11,
+    "def": 6,
+    "exp": 66,
+    "money": 15,
+    "equip": [1, 2]
+  },
+  "m3": {
+    "id": "m3",
+    "name": "Merie3",
+    "fhp": 60,
+    "hp": 60,
+    "atk": 15,
+    "def": 7,
+    "exp": 86,
+    "money": 25,
+    "equip": [8, 9]
+  },
+  "m4": {
+    "id": "m4",
+    "name": "Merie4",
+    "fhp": 70,
+    "hp": 70,
+    "atk": 17,
+    "def": 8,
+    "exp": 106,
+    "money": 35,
+    "equip": [1, 2, 3]
+  },
+  "m5": {
+    "id": "m5",
+    "name": "Merie5",
+    "fhp": 80,
+    "hp": 80,
+    "atk": 19,
+    "def": 9,
+    "exp": 126,
+    "money": 45,
+    "equip": [3, 4]
+  },
+  "m6": {
+    "id": "m6",
+    "name": "Merie6",
+    "fhp": 90,
+    "hp": 90,
+    "atk": 21,
+    "def": 10,
+    "exp": 146,
+    "money": 55,
+    "equip": [2, 3, 4]
+  },
+  "m7": {
+    "id": "m7",
+    "name": "Merie7",
+    "fhp": 100,
+    "hp": 100,
+    "atk": 23,
+    "def": 11,
+    "exp": 166,
+    "money": 65,
+    "equip": [1, 2, 3, 4]
+  },
+  "m8": {
+    "id": "m8",
+    "name": "Merie8",
+    "fhp": 150,
+    "hp": 150,
+    "atk": 25,
+    "def": 12,
+    "exp": 186,
+    "money": 75,
+    "equip": [3, 4, 5]
+  },
+  "m9": {
+    "id": "m9",
+    "name": "Merie9",
+    "fhp": 250,
+    "hp": 250,
+    "atk": 27,
+    "def": 13,
+    "exp": 266,
+    "money": 100,
+    "equip": [1, 2, 3, 4, 5]
+  }
+}
