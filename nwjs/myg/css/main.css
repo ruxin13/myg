@@ -80,6 +80,9 @@ ul, li{
   border: 0;
   margin: 20px auto;
 }
+.start[disabled]{
+  background-color: #ccc;
+}
 .w{
   box-sizing: border-box;
   padding: 10px;

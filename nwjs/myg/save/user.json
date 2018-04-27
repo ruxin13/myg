@@ -1,1 +1,1 @@
-{"id":"p","name":"Aston","fhp":20,"hp":0,"atk":18,"def":8,"exp":44,"level":3,"ck":3,"money":0,"p_B":[{"id":5,"num":1},{"id":5,"num":1}]}
+{"id":"p","name":"Aston","fhp":50,"hp":50,"atk":22,"def":9,"exp":534,"level":4,"ck":1,"money":40,"p_B":[{"id":1,"num":7},{"id":2,"num":3}]}

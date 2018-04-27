@@ -41,6 +41,7 @@ function atk (a, b) {
  * 战斗过程
  */
 function fight(a, b) {
+  $("#w").html("");
   var act = true;
   var war = setInterval(function () {
     var ret = {};

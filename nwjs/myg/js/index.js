@@ -31,11 +31,6 @@ renderRole(user, 1);
 renderRole(G.monster["m" + user["ck"]], 2);
 renderBag();
 
-$("#ck3").on("click", function () {
-  user["ck"] = 3;
-  $("#ck").text(user["ck"]);
-});
-
 // start
 $("#start").on("click", function () {
   console.log(user);
@@ -44,6 +39,10 @@ $("#start").on("click", function () {
 
 // atk
 function fight(a, b) {
+  a.hp = a.fhp;
+  b.hp = b.fhp;
+  $("#w").html(" ");
+
   var act = true;
   var war = setInterval(function () {
     var ret = {};
@@ -58,9 +57,12 @@ function fight(a, b) {
       clearInterval(war);
       ret.hp = 0;
       $("#w").append("<li>" + ret.name + " has been dead!" + "</li>");
-      countEquip(a, b);
-      saveUser();
-      console.log(user);
+      if (act) {
+        countEquip(a, b);
+        user.hp = user.fhp;
+        saveUser();
+        console.log(user);
+      }
     }
     act = !act;
   }, 500);
@@ -76,7 +78,6 @@ function atk(a, b) {
   $("#w").append("<li>" + a.name + " hurt " + b.name + " " + h + "</li>");
   return b.hp;
 }
-
 // render role
 function renderRole(obj, pos) {
   var $position;
@@ -84,10 +85,10 @@ function renderRole(obj, pos) {
     $position = $(".pr");
   } else {
     $position = $(".pl");
+    $("#coin").text(obj.money);
   }
   $position.find(".p").text(obj.name);
 }
-
 // render hurt
 function renderHurt(o, n) {
   $("#" + o.id).parent().append('<div class="hurt">-' + n + '</div>');
@@ -95,7 +96,6 @@ function renderHurt(o, n) {
     $("#" + o.id).siblings(".hurt").remove();
   }, 800);
 }
-
 // random num
 function getArrayItems(arr, num) {
   var temp_array = [];
@@ -118,29 +118,29 @@ function getArrayItems(arr, num) {
 function randomFrom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 // equipment fall down
 function countEquip(a, b) {
   var atker = a.equip ? a : b;
   var retArr = getArrayItems(atker.equip, randomFrom(0, atker.equip.length));
+  var tmp = [];
   retArr.forEach(function (t) {
     var obj = {};
     obj.id = G.equip[t].id;
     obj.num = 1;
-    user.p_B.push(obj);
+    tmp.push(obj);
   });
-  // exp
   expToLevel(G["monster"]["m" + user["ck"]]["exp"]);
+  addCoin(atker.money);
+  addToBag(tmp);
   renderBag();
 }
-
 // render bag
 function renderBag() {
   var objs = user.p_B;
   if (objs && objs.length > 0) {
     var html = "";
     objs.forEach(function (t) {
-      html += "<div>" + t.id + "</div>"
+      html += "<div>" + t.id + "=>" + t.num + "</div>"
     });
     $("#bag").html(html);
   }
@@ -149,7 +149,6 @@ function renderBag() {
 function saveUser() {
   fs.writeFileSync(filePath.user, JSON.stringify(user));
 }
-
 // exp count level
 function expToLevel(n) {
   var exp = n;
@@ -166,12 +165,40 @@ function expToLevel(n) {
 }
 // level up
 function levelUp() {
-  var level = user.level - 1;
-  user.level++;
-  curExp = 0;
-  user.hp += level * 10;
-  user.fhp += level * 10;
-  user.atk += parseInt(level * 1.5);
-  user.def += parseInt(level * 0.8);
-  console.log("level up!");
+  if (G["maxLevel"] > user.level) {
+    var level = user.level - 1;
+    user.level++;
+    curExp = 0;
+    user.hp += level * 10;
+    user.fhp += level * 10;
+    user.atk += parseInt(level * 1.5);
+    user.def += parseInt(level * 0.8);
+    console.log("level up!");
+  } else {
+    console.log("up to max level");
+  }
+}
+// add to bag
+function addToBag(arr) {
+  if (arr && arr.length > 0) {
+    var bag = user.p_B;
+    var hasRepeat = -1;
+    for (var i=0;i<arr.length;i++) {
+      for (var j=0;j<bag.length;j++) {
+        if (arr[i].id === bag[j].id) {
+          hasRepeat = j;
+        }
+      }
+      if (hasRepeat > -1) {
+        bag[hasRepeat].num += arr[i]["num"];
+      } else {
+        bag.push(arr[i]);
+      }
+    }
+  }
+}
+// add coin
+function addCoin(n) {
+  user.money += n;
+  $("#coin").text(user.money);
 }
